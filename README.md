@@ -15,9 +15,9 @@ The script gets music from your private channel and randomly forwards it to anot
 
 - Type something in the first channel, then forward this message to [@getmyid_bot](https://t.me/getmyid_bot). Do the same with the second channel. This is how we can get the channel IDs. Look at the `Forwarded from chat` values.
 
-- Open the main.py script in any text editor and replace `api_id` and `api_hash` with your values from [API development tools](https://my.telegram.org/apps), `from_channel` and `to_channel` with your values from [@getmyid_bot](https://t.me/getmyid_bot)
+- Go to the tshuffler folder, open the main.py script in any text editor and replace `api_id` and `api_hash` with your values from [API development tools](https://my.telegram.org/apps), `from_channel` and `to_channel` with your values from [@getmyid_bot](https://t.me/getmyid_bot)
 
-- Go to the tshuffler folder, open terminal and run main.py: `python3 main.py`
+- Open terminal and run main.py: `python3 main.py`
 
 - Enter your account phone number, then enter login confirmation code. After a successful login, the `tshuffler.session` file will be created. This file is personal and must be kept secret!
 
