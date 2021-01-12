@@ -2,7 +2,7 @@
 ### While we don't have a [shuffle play](https://github.com/telegramdesktop/tdesktop/pull/7700) feature in [Telegram desktop client](https://github.com/telegramdesktop/tdesktop), this kludge solves this problem.
 
 The script gets music from your private channel and randomly forwards it to another private channel.
-
+![preview](https://github.com/xtrahigh/tshuffler/blob/master/preview.gif)
 # Usage guide
 
 - Install telethon library: `pip3 install telethon`
