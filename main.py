@@ -42,7 +42,9 @@ async def main():
         to_messages_ids.append(message.id)
 
     # Pins the message with the first shuffled track to easily jump to it
+    # then deletes the message about pinning
     await client.pin_message(to_channel, to_messages_ids[-1], notify=False)
+    await client.delete_messages(to_channel, to_messages_ids[0] + 1)
     print('First track pinned\n\nEnjoy your listening!')
 
 with client:
