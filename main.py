@@ -14,17 +14,17 @@ client.start()
 
 async def main():
     # Creates a list with message IDs of your main music channel
-    messages_ids = []
+    from_messages_ids = []
     async for message in client.iter_messages(from_channel, None, filter=InputMessagesFilterMusic):
-        messages_ids.append(message.id)
-    print('Got', len(messages_ids), 'tracks to shuffle\n')
+        from_messages_ids.append(message.id)
+    print('Got', len(from_messages_ids), 'tracks to shuffle\n')
 
-    shuffle(messages_ids)
+    shuffle(from_messages_ids)
 
     # Creates a list with message IDs of your shuffled music channel
     to_messages_ids = []
-    async for to_message in client.iter_messages(to_channel, None, filter=InputMessagesFilterMusic):
-        to_messages_ids.append(to_message.id)
+    async for message in client.iter_messages(to_channel, None, filter=InputMessagesFilterMusic):
+        to_messages_ids.append(message.id)
 
     # Clears your shuffled music channel from previous shuffled tracks
     await client.delete_messages(to_channel, to_messages_ids)
@@ -32,18 +32,18 @@ async def main():
 
     # Forwards music from your main music channel to your shuffled music channel
     # Method: message by message
-    for messages_id in messages_ids:
-        await client.forward_messages(to_channel, messages_id, from_channel, silent=True)
-    print('Forwarded', len(messages_ids), 'shuffled tracks\n')
+    for message_id in from_messages_ids:
+        await client.forward_messages(to_channel, message_id, from_channel, silent=True)
+    print('Forwarded', len(from_messages_ids), 'shuffled tracks\n')
 
     # Creates a list with message IDs of your shuffled music channel
     to_messages_ids = []
-    async for to_message in client.iter_messages(to_channel, None, filter=InputMessagesFilterMusic):
-        to_messages_ids.append(to_message.id)
+    async for message in client.iter_messages(to_channel, None, filter=InputMessagesFilterMusic):
+        to_messages_ids.append(message.id)
 
     # Pins the message with the first shuffled track to easily jump to it
     await client.pin_message(to_channel, to_messages_ids[-1], notify=False)
-    print('First track pinned\n\nEnjoy your listening')
+    print('First track pinned\n\nEnjoy your listening!')
 
 with client:
     client.loop.run_until_complete(main())
