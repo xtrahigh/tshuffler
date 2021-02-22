@@ -53,7 +53,7 @@ In the future, you just need to execute the `python3 main.py` command being in t
 
 - Авторизуйтесь на [my.telegram.org](https://my.telegram.org), перейдите в раздел [API development tools](https://my.telegram.org/apps) и создайте приложение с именем `tshuffler`
 
-- В клиенте Telegram создайте 2 частных канала. Первый для хранения вашей музыки ([пример](https://t.me/cctracks_Rock)), второй для .
+- В клиенте Telegram создайте 2 частных канала. Первый для хранения вашей музыки ([пример](https://t.me/cctracks_Rock)), второй для перемешивания треков.
 
 - Напишите что-нибудь в первом канале и перешлите сообщение в [@getmyid_bot](https://t.me/getmyid_bot). То же самое сделайте и со вторым каналом. Так вы можете получить ID каналов. Смотрите значение `Forwarded from chat`.
 
@@ -63,4 +63,4 @@ In the future, you just need to execute the `python3 main.py` command being in t
 
 - Введите номер телефона, привязанный к аккаунту, затем введите код подтверждения. После успешного входа будет создан файл `tshuffler.session`. Этот файл является личным и должен храниться в секрете!
 
-В будущем, вам просто нужно выполнить `python3 main.py`, находясь в папке со скриптом, или создать ярлык для него.
+В будущем вам просто нужно выполнить `python3 main.py`, находясь в папке со скриптом, или создать ярлык для него.
